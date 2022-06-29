@@ -1,0 +1,14 @@
+header {
+  background: #e84444;
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  width: 358px;
+  height: 101px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}

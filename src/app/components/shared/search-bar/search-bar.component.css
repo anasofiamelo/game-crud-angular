@@ -1,0 +1,31 @@
+input {
+  background: var(--white);
+  width: 300px;
+  height: 50px;
+  /* padding: 0.9rem 1.8rem; */
+  border: none;
+  position: relative;
+  left: 10px;
+}
+input:focus {
+  outline: none;
+}
+
+.search-bar {
+  background: var(--white);
+  padding: 0.3rem;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  position: relative;
+  background: var(--black);
+  color: var(--white);
+  padding: 1rem 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+}

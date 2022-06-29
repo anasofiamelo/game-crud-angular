@@ -1,0 +1,9 @@
+<div class="game-card">
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  <p>{{ mediumPrice }}</p>
+  <h3>GENRES</h3>
+  <div *ngFor="let genre of genres">
+    <p>- {{ genre }}</p>
+  </div>
+</div>
