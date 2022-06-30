@@ -1,4 +1,53 @@
-div {
+.game-list-container > * {
+  margin: 1rem 0;
+}
+.card-list {
+  display: grid;
+  align-items: center;
+  margin-top: 2rem;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 400px;
+}
+
+.page-title {
+  font-weight: 800;
+  color: var(--white);
+}
+
+.title-description {
+  font-weight: 100;
+  color: var(--white);
+}
+
+.game-list-header,
+.game-list-searchbar-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.game-list-searchbar-container * {
+  height: 40px;
+}
+
+button {
+  background: var(--red);
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 2px;
+  width: 150px;
+}
+
+input {
+  width: 200px;
+  border: 2px solid var(--red);
+  background: none;
+  margin-right: 10px;
+  padding: 0 1rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+input:focus {
+  outline: none;
 }

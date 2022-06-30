@@ -1,15 +1,31 @@
+import { TokenService } from './token.service';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+
+// interface Token {
+//   user: {
+//     _id: string;
+//   };
+//   token: string;
+// }
+interface ResponseAuth {
+  body: string;
+  headers: HttpHeaders;
+  ok: boolean;
+  status: number;
+  statusText: string;
+  type: number;
+  url: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   API = 'https://api-labs.tindin.com.br';
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private tokenService: TokenService) {}
 
   authenticate(email: string, password: string) {
     return this.http
@@ -20,9 +36,8 @@ export class AuthService {
       )
       .pipe(
         tap((res) => {
-          console.log('res: ', res);
-          // const authToken = res.headers.get('Authorization');
-          // this.userService.setToken(authToken);
+          const response = JSON.parse(res.body || '{}');
+          this.tokenService.setToken(response.token);
         })
       );
   }

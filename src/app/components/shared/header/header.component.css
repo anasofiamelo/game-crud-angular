@@ -1,9 +1,12 @@
 header {
-  background: #e84444;
+  background: var(--red);
   display: flex;
   justify-content: space-between;
+  padding: 0 10%;
+  /* width: 100; */
 }
 img {
+  margin-left: -40px;
   width: 358px;
   height: 101px;
 }

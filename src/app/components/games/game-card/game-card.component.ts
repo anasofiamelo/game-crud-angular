@@ -6,12 +6,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./game-card.component.css'],
 })
 export class GameCardComponent implements OnInit {
+  @Input() _id: string = '';
   @Input() title: string = '';
+  @Input() rating: number = 0;
   @Input() description: string = '';
   @Input() mediumPrice?: number = 0;
   @Input() genres?: string[] = [];
-
+  @Input() photos?: Object[] = [];
+  hasPhotos: boolean;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.hasPhotos = !!this.photos?.length;
+  }
 }

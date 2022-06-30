@@ -3,5 +3,5 @@
     <img src="../../../../assets/logo.png" />
   </a>
   <app-search-bar></app-search-bar>
-  //user logo here
+  <a *ngIf="!isLogged" href="/login">Click here to login</a>
 </header>

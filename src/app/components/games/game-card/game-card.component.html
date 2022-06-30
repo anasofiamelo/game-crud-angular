@@ -1,9 +1,13 @@
-<div class="game-card">
+<a class="game-card">
   <h1>{{ title }}</h1>
-  <p>{{ description }}</p>
-  <p>{{ mediumPrice }}</p>
-  <h3>GENRES</h3>
+  <p *ngIf="!!mediumPrice; else free">${{ mediumPrice }}</p>
+  <!-- <h3>GENRES</h3>
   <div *ngFor="let genre of genres">
     <p>- {{ genre }}</p>
-  </div>
-</div>
+  </div> -->
+</a>
+<p>RATING: {{ rating }}</p>
+
+<ng-template #free>
+  <p>Free!</p>
+</ng-template>

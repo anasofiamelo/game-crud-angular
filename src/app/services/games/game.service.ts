@@ -15,10 +15,6 @@ export class GameService {
 
   listGames() {
     return this.http.get<ReqGETGames>('https://api-labs.tindin.com.br/games');
-    // .subscribe((res) => {
-    //   console.log(res.games);
-    //   this.games = res.games;
-    // });
   }
 
   getGameById(gameId: number) {

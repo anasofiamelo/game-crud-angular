@@ -1,11 +1,22 @@
-<h1 class="page-title">Games</h1>
-<h3 class="title description">Games manager portal</h3>
-<div class="card-list">
-  <app-game-card
-    *ngFor="let game of games"
-    [title]="game.title"
-    [description]="game.description"
-    [mediumPrice]="game.mediumPrice"
-  >
-  </app-game-card>
+<div class="game-list-container">
+  <div class="game-list-header">
+    <div class="title-container">
+      <h1 class="page-title">Games</h1>
+      <h3 class="title-description">Games manager portal</h3>
+    </div>
+    <div class="game-list-searchbar-container">
+      <input placeholder="Search from..." class="game-list-searchbar" />
+      <button>New Game</button>
+    </div>
+  </div>
+  <div class="card-list">
+    <app-game-card
+      *ngFor="let game of games"
+      [title]="game.title"
+      [description]="game.description"
+      [mediumPrice]="game.mediumPrice"
+      [photos]="game.photos"
+    >
+    </app-game-card>
+  </div>
 </div>

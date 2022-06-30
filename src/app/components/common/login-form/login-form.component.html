@@ -2,9 +2,18 @@
   <div class="container">
     <h1>SIGN IN</h1>
     <p>Insert your account information</p>
-    <form>
-      <input type="text" placeholder="Username or e-mail" />
-      <input type="password" placeholder="Password" />
+    <form [formGroup]="loginForm" (submit)="login()">
+      <input
+        #emailInput
+        formControlName="email"
+        type="text"
+        placeholder="Username or e-mail"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="Password"
+      />
       <button type="submit">Login Your Account</button>
     </form>
     <p>No account? Send email fabio@tindin.com.br</p>
