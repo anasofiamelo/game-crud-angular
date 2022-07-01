@@ -1,1 +1,73 @@
-<p>game-details works!</p>
+<p class="mini-title"> {{ game.title }}</p>
+
+<div class="container">
+  <div *ngIf="!!game.photos?.length else defaultImage" class="img-container">
+    <img class="game-img-details" [src]="game.mainPhoto?.url">
+  </div>
+
+  <div class="game-container">
+    <div class="game-details-container header">
+      <div class="header">
+        <p class="rating">{{game.rating}}/10</p>
+        <h3 class="title"> {{game.title}}</h3>
+      </div>
+      <p *ngIf="!!game.resume else noResumeFound" class="resume">{{game.resume}}</p>
+    </div>
+
+    <div class="game-details-container">
+      <div class="details-container">
+        <span class="info-title">Genres: </span>
+        <span class="game-info genre" *ngFor="let genre of game.genres">{{genre}} </span>
+      </div>
+
+      <div class="details-container">
+        <p>
+          <span class="info-title">Total votes: </span>
+          <span class="game-info"> {{game.totalVotes}} </span>
+        </p>
+      </div>
+
+      <div class="details-container">
+        <div *ngIf="!!game.platforms?.length">
+          <p>
+            <span class="info-title">Platforms: </span>
+            <span class="game-info" *ngFor="let platform of game.platforms"> {{platform}} </span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="game-details-container">
+      <div class="details-container">
+        <p *ngIf="!!game.mediumPrice else freeGame">
+          <span class="medium-price"> Medium Price </span>
+          <span class="red">${{game.mediumPrice}}.00</span>
+        </p>
+      </div>
+
+      <div class="details-container">
+        <p class="release-year">Release year: {{game.releaseYear}}</p>
+      </div>
+
+      <div class="details-container">
+        <button class="btn">Vote Now</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<ng-template #freeGame>
+  <span class="red"> FREE GAME</span>
+</ng-template>
+
+<ng-template #noResumeFound>
+  <span class="resume"> No resume was found for this game. </span>
+</ng-template>
+
+<ng-template #defaultImage>
+  <div class="img-container">
+    <img class="game-img-details" src="../../../../assets/kbNysWWRBk-2.svg">
+  </div>
+</ng-template>

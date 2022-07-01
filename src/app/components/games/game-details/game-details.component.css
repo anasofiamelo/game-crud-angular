@@ -1,0 +1,89 @@
+* {
+  color: var(--white)
+}
+
+.header {
+  display: flex;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.game-details-container {
+  border-bottom: 1px solid var(--white);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.5rem 0;
+}
+
+.details-container * {
+  margin-bottom: 1rem;
+}
+
+.mini-title {
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+}
+
+.resume {
+  margin: 1rem 0;
+}
+
+.rating {
+  background: var(--red);
+  padding: .8rem 1rem;
+  border-radius: 15px;
+  margin-right: 10px;
+  font-weight: 800;
+}
+
+.info-title {
+  font-weight: 800;
+}
+
+.game-details-info-container {
+  margin: 1rem 0;
+  border-bottom: 1px solid var(--white);
+
+}
+.details-container > * {
+  margin: 1rem 0;
+}
+
+.game-info {
+  font-weight: 100;
+}
+
+.genre {
+  font-style: italic;
+}
+
+.red {
+  color: var(--red);
+  font-weight: 800;
+  font-size: 1.5rem;
+  opacity: 1;
+}
+
+.medium-price {
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.7
+}
+
+.release-year {
+  opacity: 0.7;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.game-img-details {
+  width: 580px;
+  height: 500px;
+}

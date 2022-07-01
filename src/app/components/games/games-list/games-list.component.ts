@@ -15,7 +15,11 @@ export class GamesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameService.listGames().subscribe((res) => {
-      console.log(res.games);
+      // const oi: Game[] = res.games.map((game) => {
+      //   game['mainPhoto'] = game.photos?[0]
+      //   return game
+      // })
+
       this.games = res.games;
     });
   }

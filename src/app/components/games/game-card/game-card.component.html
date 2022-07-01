@@ -1,13 +1,11 @@
-<a class="game-card">
-  <h1>{{ title }}</h1>
-  <p *ngIf="!!mediumPrice; else free">${{ mediumPrice }}</p>
-  <!-- <h3>GENRES</h3>
-  <div *ngFor="let genre of genres">
-    <p>- {{ genre }}</p>
-  </div> -->
+<a class="game-card" (click)="gotoGameDetails(id)">
+  <div [ngClass]="{'default-image': !photos?.length}">
+    <h1>{{ title }}</h1>
+    <p class="mediumPrice" *ngIf="!!mediumPrice; else free">${{ mediumPrice }}</p>
+    <p class="rating"> {{ rating }}/10</p>
+  </div>
 </a>
-<p>RATING: {{ rating }}</p>
 
 <ng-template #free>
-  <p>Free!</p>
+  <p class="mediumPrice" >Free!</p>
 </ng-template>

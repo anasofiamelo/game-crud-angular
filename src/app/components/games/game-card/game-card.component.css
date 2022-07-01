@@ -11,15 +11,17 @@
   margin-right: 10px;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.2s ease-in-out;
+  overflow: hidden;
 }
 
 .game-card:hover h1,
-.game-card:hover p {
-  transition: 0.2s ease-in-out;
-  transform: scale(1.5);
+.game-card:hover .mediumPrice,
+.game-card:hover .default-image {
+  transform: scale(1.2);
 }
-
+h1, .mediumPrice, .default-image {
+   transition: all 0.2s ease-in-out;
+ }
 .game-card * {
   margin: 10px;
 }
@@ -32,4 +34,17 @@ h1 {
 p {
   font-weight: 800;
   font-size: 1.3rem;
+}
+
+.rating {
+  background: var(--red);
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 65px;
+  left: 34%;
+  position: relative;
+}
+
+.default-image {
+  background-image: url(../../../../assets/kbNysWWRBk-2.svg);
 }
