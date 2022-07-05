@@ -15,9 +15,28 @@
     </div>
 
     <div class="game-details-container">
+
       <div class="details-container">
         <span class="info-title">Genres: </span>
         <span class="game-info genre" *ngFor="let genre of game.genres">{{genre}} </span>
+      </div>
+
+      <div class="details-container">
+        <div *ngIf="!!game.studio">
+          <p>
+            <span class="info-title">Studio: </span>
+            <span class="game-info"> {{game.studio?.name}} </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="details-container">
+        <div *ngIf="!!game.productor">
+          <p>
+            <span class="info-title">Productor: </span>
+            <span class="game-info"> {{game.productor}} </span>
+          </p>
+        </div>
       </div>
 
       <div class="details-container">
@@ -28,10 +47,28 @@
       </div>
 
       <div class="details-container">
+        <div *ngIf="!!game.company">
+          <p>
+            <span class="info-title">Company: </span>
+            <span class="game-info"> {{game.company?.name}} </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="details-container">
         <div *ngIf="!!game.platforms?.length">
           <p>
             <span class="info-title">Platforms: </span>
             <span class="game-info" *ngFor="let platform of game.platforms"> {{platform}} </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="details-container">
+        <div *ngIf="!!game.tags?.length">
+          <p>
+            <span class="info-title">Tags: </span>
+            <span class="game-info" *ngFor="let tag of game.tags"> #{{tag}} </span>
           </p>
         </div>
       </div>

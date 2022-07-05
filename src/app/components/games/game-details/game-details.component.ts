@@ -21,7 +21,9 @@ export class GameDetailsComponent implements OnInit {
     this.gameService.getGameById(gameId).subscribe((res: any) => {
       console.log(res.game)
       this.game = res.game
-      this.game['mainPhoto'] = res.game.photos[0]
+      if(!res.game.mainPhoto){
+        this.game['mainPhoto'] = res.game.photos[0]
+      }
     });
   }
 }

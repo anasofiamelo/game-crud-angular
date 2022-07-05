@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Game } from '../../../interfaces/Game';
 import { GameService } from '../../../services/games/game.service';
@@ -11,7 +12,7 @@ import { GameService } from '../../../services/games/game.service';
 export class GamesListComponent implements OnInit {
   games: Game[] = [];
 
-  constructor(private gameService: GameService) {}
+  constructor(private route: Router, private gameService: GameService) {}
 
   ngOnInit(): void {
     this.gameService.listGames().subscribe((res) => {
@@ -22,5 +23,9 @@ export class GamesListComponent implements OnInit {
 
       this.games = res.games;
     });
+  }
+
+  gotoNewGame() {
+    this.route.navigateByUrl(`/add`)
   }
 }

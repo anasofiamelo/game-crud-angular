@@ -1,6 +1,9 @@
 <div class="">
   <app-header></app-header>
   <div class="router-outlet">
+    <button (click)="loader.show()">show</button>
+    <button (click)="loader.hide()">hide</button>
+    <mat-progress-spinner *ngIf="loading | async" [mode]="'indeterminate'"></mat-progress-spinner>
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>

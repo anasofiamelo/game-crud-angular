@@ -11,13 +11,18 @@ interface ReqGETGames {
   providedIn: 'root',
 })
 export class GameService {
+  API: string = 'https://api-labs.tindin.com.br'
   constructor(private http: HttpClient) {}
 
   listGames() {
-    return this.http.get<ReqGETGames>('https://api-labs.tindin.com.br/games');
+    return this.http.get<ReqGETGames>(`${this.API}/games`);
   }
 
   getGameById(gameId: number) {
-    return this.http.get(`https://api-labs.tindin.com.br/games/${gameId}`);
+    return this.http.get(`${this.API}/games/${gameId}`);
+  }
+
+  addGame(data: Game){
+    return this.http.post(`${this.API}/games`, data)
   }
 }

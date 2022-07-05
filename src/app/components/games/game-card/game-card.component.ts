@@ -13,7 +13,7 @@ interface Photo {
   styleUrls: ['./game-card.component.css'],
 })
 export class GameCardComponent implements OnInit {
-  @Input() id: string = '';
+  @Input() id?: string = '';
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() rating?: number;
@@ -29,7 +29,7 @@ export class GameCardComponent implements OnInit {
     this.hasPhotos = !!this.photos?.length;
   }
 
-  gotoGameDetails(id: string) {
+  gotoGameDetails(id?: string) {
     this.route.navigateByUrl(`/game/${id}`)
   }
 }

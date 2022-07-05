@@ -1,1 +1,64 @@
-<p>game-form works!</p>
+<p class="mini-title">Name of game here</p>
+
+<div class="form-container">
+  <div></div>
+  <form [formGroup]="gameForm" (submit)="addGame()">
+    <input formControlName="gameTitle" type="text" placeholder="Enter game name">
+    <input formControlName="gameResume" type="text" placeholder="Enter game resume">
+
+    <div class="form-group">
+      <p class="label"> Genre: </p>
+      <select formControlName="gameGenres" name="genres" [(ngModel)]="genres">
+        <option *ngFor="let genre of genres" [ngValue]="genre">{{genre}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p class="label"> Platform: </p>
+      <select formControlName="gamePlatforms" name="platforms" [(ngModel)]="platforms">
+        <option *ngFor="let platform of platforms" [ngValue]="platform">{{platform}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="medium-price">Medium Price: </label>
+      <input
+        formControlName="gameMediumPrice"
+        name="medium-price"
+        type="number"
+        placeholder="Enter game medium price">
+    </div>
+
+    <div class="form-group">
+      <label for="release-year">Release Year: </label>
+      <input
+        formControlName="gameReleaseYear"
+        name="release-year"
+        type="number"
+        placeholder="Enter game release year">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <input
+        formControlName="gameDescription"
+        name="description"
+        type="text"
+        placeholder="Enter game description">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Photo link: </label>
+      <input
+        formControlName="gamePhotoLink"
+        name="photo"
+        type="text"
+        placeholder="Enter photo link">
+    </div>
+
+    <div class="btn-container">
+      <button class="btn cancel"> Cancel </button>
+      <button type="submit" class="btn"> Save Game</button>
+    </div>
+  </form>
+</div>

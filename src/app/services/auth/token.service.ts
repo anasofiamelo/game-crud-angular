@@ -13,7 +13,7 @@ export class TokenService {
     window.localStorage.setItem(this.token_key, token);
   }
   getToken() {
-    return window.localStorage.getItem(this.token_key);
+    return window.localStorage.getItem(this.token_key) || [];
   }
   removeToken() {
     window.localStorage.removeItem(this.token_key);

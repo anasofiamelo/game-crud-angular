@@ -1,0 +1,64 @@
+* {
+  color: var(--white)
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group input, .form-group select {
+  width: 85%;
+}
+
+input:focus, select:focus {
+  /* width: 85%; */
+  outline: none
+}
+
+.form-group label, .label {
+  font-weight: 400;
+}
+
+input, select {
+  background: var(--black);
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  border: 3px solid var(--red);
+  margin-bottom: 0.5rem;
+}
+
+input::placeholder {
+  opacity: 0.75;
+  color: var(--white)
+}
+
+.mini-title {
+  text-align: center;
+  padding: 2rem;
+  color: var(--white);
+  font-weight: 400;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: .8rem 4rem;
+  color: var(--white);
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.btn.cancel {
+  background: grey;
+}
